@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %title Billablemachine
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    .container
+      - flash.each do |type, message|
+        .alert.alert-block{ :class => flash_class(type)}
+          %button.close{"data-dismiss" => "alert"} x
+          %div
+            = message
+
+      = yield
