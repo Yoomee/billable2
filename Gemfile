@@ -42,10 +42,16 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
 group :test do
   gem 'cucumber-rails', :require => false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'selenium-webdriver'
 end
 
 
