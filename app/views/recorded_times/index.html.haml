@@ -1,0 +1,21 @@
+%h1 Listing recorded_times
+
+%table
+  %tr
+    %th Todo list item
+    %th User
+    %th
+    %th
+    %th
+
+  - @recorded_times.each do |recorded_time|
+    %tr
+      %td= recorded_time.todo_list_item
+      %td= recorded_time.user
+      %td= link_to 'Show', recorded_time
+      %td= link_to 'Edit', edit_recorded_time_path(recorded_time)
+      %td= link_to 'Destroy', recorded_time, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Recorded time', new_recorded_time_path

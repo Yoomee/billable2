@@ -4,4 +4,5 @@ class RecordedTime < ActiveRecord::Base
   
   validates_associated :todo_list_item
   validates_associated :user
+  validates :hours, :presence => true
 end

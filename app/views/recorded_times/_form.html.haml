@@ -1,0 +1,15 @@
+= form_for @recorded_time do |f|
+  - if @recorded_time.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@recorded_time.errors.count, "error")} prohibited this recorded_time from being saved:"
+      %ul
+        - @recorded_time.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :hours
+    = f.number_field :hours
+    = f.hidden_field :todo_list_item_id, :value => @todo_list_item.id
+    = f.hidden_field :user_id, :value => current_user.id
+  .actions
+    = f.submit 'Save'

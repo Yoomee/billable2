@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Todo list item:
+  = @recorded_time.todo_list_item
+%p
+  %b User:
+  = @recorded_time.user
+
+= link_to 'Edit', edit_recorded_time_path(@recorded_time)
+\|
+= link_to 'Back', recorded_times_path
