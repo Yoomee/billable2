@@ -1,4 +1,7 @@
 Billablemachine2::Application.routes.draw do
+  devise_for :users
+  root to: "clients#index"
+  
   resources :todo_list_items
 
   resources :todo_lists
