@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @todo_list_item.name
+%p
+  %b Todo list:
+  = @todo_list_item.todo_list
+
+= link_to 'Edit', edit_todo_list_item_path(@todo_list_item)
+\|
+= link_to 'Back', todo_list_items_path

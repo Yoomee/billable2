@@ -1,4 +1,8 @@
 Billablemachine2::Application.routes.draw do
+  resources :todo_list_items
+
+  resources :todo_lists
+
   resources :projects
 
   resources :clients
