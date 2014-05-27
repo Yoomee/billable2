@@ -1,14 +1,20 @@
 Billablemachine2::Application.routes.draw do
   devise_for :users
   root to: "clients#index"
+
+  resources :clients do
+    resources :projects
+  end
+  
+  resources :projects do
+    resources :todo_lists
+  end
+  
+  resources :todo_lists do
+    resources :todo_list_items
+  end
   
   resources :todo_list_items
-
-  resources :todo_lists
-
-  resources :projects
-
-  resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

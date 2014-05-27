@@ -11,6 +11,6 @@
     = f.text_field :name
   .field
     = f.label :project
-    = f.number_field :project_id
+    = f.hidden_field :project_id, :value => @project.id
   .actions
     = f.submit 'Save'

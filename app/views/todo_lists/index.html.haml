@@ -15,6 +15,7 @@
       %td= link_to 'Show', todo_list
       %td= link_to 'Edit', edit_todo_list_path(todo_list)
       %td= link_to 'Destroy', todo_list, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'New todolist item', new_todo_list_todo_list_item_path(todo_list)
 
 %br
 

@@ -11,6 +11,6 @@
     = f.text_field :name
   .field
     = f.label :todo_list
-    = f.number_field :todo_list_item_id
+    = f.hidden_field :todo_list_id, :value => @todo_list.id
   .actions
     = f.submit 'Save'

@@ -15,6 +15,7 @@ class TodoListItemsController < ApplicationController
   # GET /todo_list_items/new
   def new
     @todo_list_item = TodoListItem.new
+    @todo_list = TodoList.find(params[:todo_list_id])
   end
 
   # GET /todo_list_items/1/edit
