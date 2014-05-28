@@ -4,4 +4,11 @@ class Project < ActiveRecord::Base
   
   validates :name, presence: true
   validates_associated :client
+  
+  def budget
+    budget = 0
+    self.todo_lists.each do |todo_lists|
+      
+    end
+  end
 end

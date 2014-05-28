@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527152300) do
+ActiveRecord::Schema.define(version: 20140527155300) do
 
   create_table "clients", force: true do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20140527152300) do
     t.integer  "todo_list_item_id"
     t.integer  "user_id"
     t.integer  "hours"
+    t.date     "date"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -53,8 +55,10 @@ ActiveRecord::Schema.define(version: 20140527152300) do
   create_table "todo_lists", force: true do |t|
     t.string   "name"
     t.integer  "project_id"
+    t.boolean  "billable"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "budget"
   end
 
   add_index "todo_lists", ["project_id"], name: "index_todo_lists_on_project_id"
