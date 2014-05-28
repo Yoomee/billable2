@@ -27,7 +27,6 @@ cd /vagrant
 bundle
 rake db:create
 # Assumes you've run ym db:fetch locally or otherwise got a db in the right place
-mysql -u root offaxis_development < db/offaxis_development.sql
 rake db:migrate
 echo  ">>>>> Finished!"
 SCRIPT
