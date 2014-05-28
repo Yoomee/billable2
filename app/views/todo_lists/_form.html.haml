@@ -10,5 +10,8 @@
     = f.label :name
     = f.text_field :name
     = f.hidden_field :project_id, :value => @project.id
+  .field
+    = f.label :billable
+    = f.check_box :billable
   .actions
     = f.submit 'Save'
