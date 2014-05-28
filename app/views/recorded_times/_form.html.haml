@@ -11,5 +11,8 @@
     = f.number_field :hours
     = f.hidden_field :todo_list_item_id, :value => @todo_list_item.id
     = f.hidden_field :user_id, :value => current_user.id
+  .field
+    = f.label :date
+    = f.date_field :date
   .actions
     = f.submit 'Save'

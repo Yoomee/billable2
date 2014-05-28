@@ -71,6 +71,6 @@ class RecordedTimesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recorded_time_params
-      params.require(:recorded_time).permit(:todo_list_item_id, :user_id, :hours)
+      params.require(:recorded_time).permit(:todo_list_item_id, :user_id, :hours, :date)
     end
 end
