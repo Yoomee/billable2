@@ -9,6 +9,9 @@
   .field
     = f.label :name
     = f.text_field :name
-    = f.hidden_field :todo_list_id, :value => @todo_list.id
+    -if @todo_list
+      = f.hidden_field :todo_list_id, :value => @todo_list.id
+    -else
+      = f.hidden_field :todo_list_id, :value => @todo_list_item.todo_list.id
   .actions
     = f.submit 'Save'

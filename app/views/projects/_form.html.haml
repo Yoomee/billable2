@@ -12,6 +12,10 @@
   .field
     = f.label :description
     = f.text_field :description
-    = f.hidden_field :client_id, :value => @client.id
+    -if @client
+      = f.hidden_field :client_id, :value => @client.id
+    -else
+      = f.hidden_field :client_id, :value => @project.client.id
+      
   .actions
     = f.submit 'Save'

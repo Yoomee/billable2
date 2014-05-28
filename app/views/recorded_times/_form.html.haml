@@ -9,7 +9,10 @@
   .field
     = f.label :hours
     = f.number_field :hours
-    = f.hidden_field :todo_list_item_id, :value => @todo_list_item.id
+    -if @todo_list_item
+      = f.hidden_field :todo_list_item_id, :value => @todo_list_item.id
+    -else
+      = f.hidden_field :todo_list_item_id, :value => @recorded_time.todo_list_item.id
     = f.hidden_field :user_id, :value => current_user.id
   .field
     = f.label :date
