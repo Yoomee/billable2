@@ -4,6 +4,6 @@ class TodoList < ActiveRecord::Base
   
   validates :name, presence: true
   validates :billable, presence: true
-  validates :budget, presence: true
+  validates :budget, inclusion: [true, false]
   validates_associated :project
 end
