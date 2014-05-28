@@ -6,9 +6,6 @@ class Project < ActiveRecord::Base
   validates_associated :client
   
   def budget
-    budget = 0
-    self.todo_lists.each do |todo_lists|
-      
-    end
+    self.todo_lists.sum(:budget)
   end
 end
