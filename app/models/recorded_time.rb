@@ -37,10 +37,12 @@ class RecordedTime < ActiveRecord::Base
         todo_list_item.recorded_times.each do |recorded_time|
           if recorded_time == self
             if budget > self.todo_list_item.todo_list.budget
-              self.non_billable_time = self.hours
+              non_billable_time = self.hours
             elsif budget + self.hours > self.todo_list_item.todo_list.budget
-              self.non_billable_time = budget + self.hours - self.todo_list_item.todo_list.budget
+              non_billable_time = budget + self.hours - self.todo_list_item.todo_list.budget
             end
+            self.non_billable_time = non_billable_time
+            self.billable_time = self.hours - non_billable_time
             self.save
           else
             budget += recorded_time.hours

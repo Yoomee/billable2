@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140527155400) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "non_billable_time"
+    t.integer  "billable_time"
   end
 
   add_index "recorded_times", ["todo_list_item_id"], name: "index_recorded_times_on_todo_list_item_id"
