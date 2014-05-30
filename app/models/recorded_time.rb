@@ -41,7 +41,7 @@ class RecordedTime < ActiveRecord::Base
             elsif budget + self.hours > self.todo_list_item.todo_list.budget
               self.non_billable_time = budget + self.hours - self.todo_list_item.todo_list.budget
             end
-            save!
+            self.save
           else
             budget += recorded_time.hours
           end
